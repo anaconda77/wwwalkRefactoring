@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import wwwalk.wwwalk.entity.User;
+import wwwalk.wwwalk.exception.LoginException;
+import wwwalk.wwwalk.exception.UserException;
 import wwwalk.wwwalk.repository.UserRepository;
 
 import java.io.UnsupportedEncodingException;
@@ -37,17 +39,25 @@ public class UserService {
         Optional<User> findUser = userRepository.findById(id);
 
         if(findUser.isEmpty()) {
-            throw new IllegalStateException("해당 회원이 존재하지 않습니다.");
+            throw new LoginException("User Id No Exist");
         }
 
         if(!findUser.get().getPassword().equals(loginHashing(password))) {
-            throw new IllegalStateException("비밀번호가 일치하지 않습니다.");
+            throw new LoginException("Password Error");
         }
 
         String uuid = UUID.randomUUID().toString();
         sessionManager.putId( uuid, id);
         log.info("로그인 완료, id={}, uuid={}", id, uuid);
         return uuid;
+    }
+
+    public User getUserInfo(String uuid) {
+        Optional<User> findUser = userRepository.findById(convertUuidToId(uuid));
+        if(findUser.isEmpty()) {
+            throw new UserException("Fail To Find User");
+        }
+        return findUser.get();
     }
 
 
@@ -60,7 +70,7 @@ public class UserService {
     private void validateDuplicateMember(String uuid) {
         Optional<User> findUser = userRepository.findById(uuid);
         if(!findUser.isEmpty()) {
-            throw new IllegalStateException("이미 존재하는 회원입니다.");
+            throw new UserException("Id Duplicate Error");
         }
     }
 

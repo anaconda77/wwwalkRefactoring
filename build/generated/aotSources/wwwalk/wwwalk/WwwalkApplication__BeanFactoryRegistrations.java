@@ -283,11 +283,11 @@ public class WwwalkApplication__BeanFactoryRegistrations {
     beanFactory.registerBeanDefinition("org.springframework.data.jpa.util.JpaMetamodelCacheCleanup", JpaMetamodelCacheCleanup__BeanDefinitions.getJpaMetamodelCacheCleanupBeanDefinition());
     beanFactory.registerBeanDefinition("org.springframework.data.jpa.repository.support.JpaEvaluationContextExtension", JpaEvaluationContextExtension__BeanDefinitions.getJpaEvaluationContextExtensionBeanDefinition());
     beanFactory.registerBeanDefinition("jpa.named-queries#0", PropertiesBasedNamedQueries__BeanDefinitions.getNamedqueriesBeanDefinition());
-    beanFactory.registerBeanDefinition("jpa.PointRepository.fragments#0", RepositoryComposition__BeanDefinitions.RepositoryFragments.getFragmentsBeanDefinition());
-    beanFactory.registerBeanDefinition("pointRepository", PointRepository__BeanDefinitions.getPointRepositoryBeanDefinition());
-    beanFactory.registerBeanDefinition("jpa.named-queries#1", PropertiesBasedNamedQueries__BeanDefinitions.getNamedqueriesBeanDefinition1());
-    beanFactory.registerBeanDefinition("jpa.CommentRepository.fragments#0", RepositoryComposition__BeanDefinitions.RepositoryFragments.getFragmentsBeanDefinition1());
+    beanFactory.registerBeanDefinition("jpa.CommentRepository.fragments#0", RepositoryComposition__BeanDefinitions.RepositoryFragments.getFragmentsBeanDefinition());
     beanFactory.registerBeanDefinition("commentRepository", CommentRepository__BeanDefinitions.getCommentRepositoryBeanDefinition());
+    beanFactory.registerBeanDefinition("jpa.named-queries#1", PropertiesBasedNamedQueries__BeanDefinitions.getNamedqueriesBeanDefinition1());
+    beanFactory.registerBeanDefinition("jpa.PointRepository.fragments#0", RepositoryComposition__BeanDefinitions.RepositoryFragments.getFragmentsBeanDefinition1());
+    beanFactory.registerBeanDefinition("pointRepository", PointRepository__BeanDefinitions.getPointRepositoryBeanDefinition());
     beanFactory.registerBeanDefinition("jpa.named-queries#2", PropertiesBasedNamedQueries__BeanDefinitions.getNamedqueriesBeanDefinition2());
     beanFactory.registerBeanDefinition("jpa.PinRepository.fragments#0", RepositoryComposition__BeanDefinitions.RepositoryFragments.getFragmentsBeanDefinition2());
     beanFactory.registerBeanDefinition("pinRepository", PinRepository__BeanDefinitions.getPinRepositoryBeanDefinition());

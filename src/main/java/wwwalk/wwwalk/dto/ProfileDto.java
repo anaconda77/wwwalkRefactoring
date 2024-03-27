@@ -1,20 +1,22 @@
 package wwwalk.wwwalk.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
 @Getter
-public class ProfileDto extends ResponseDto {
+public class ProfileDto {
 
     private String userName;
+    @JsonProperty(value = "photo_url")
     private String photoUrl;
+    @JsonProperty(value = "sum_dis")
     private int sumDistance;
+    @JsonProperty(value = "walk_count")
     private Integer walkCount;
 
+    public ProfileDto(String userName, String photoUrl, int sumDistance, Integer walkCount) {
 
-    public ProfileDto(int status, HttpStatus httpStatus,
-                      String userName, String photoUrl, int sumDistance, Integer walkCount) {
-        super(status, httpStatus);
         this.userName = userName;
         this.photoUrl = photoUrl;
         this.sumDistance = sumDistance;

@@ -7211,7 +7211,7 @@
       {
         "name": "setDefaultProperties",
         "parameterTypes": [
-          "java.util.Properties"
+          "java.util.Map"
         ]
       },
       {
@@ -9453,6 +9453,12 @@
         ]
       },
       {
+        "name": "routeExHandle",
+        "parameterTypes": [
+          "wwwalk.wwwalk.exception.RouteException"
+        ]
+      },
+      {
         "name": "showFavorites",
         "parameterTypes": [
           "java.lang.String"
@@ -9662,9 +9668,21 @@
         ]
       },
       {
+        "name": "loginExHandle",
+        "parameterTypes": [
+          "wwwalk.wwwalk.exception.LoginException"
+        ]
+      },
+      {
         "name": "showProfile",
         "parameterTypes": [
           "java.lang.String"
+        ]
+      },
+      {
+        "name": "userExHandle",
+        "parameterTypes": [
+          "wwwalk.wwwalk.exception.UserException"
         ]
       }
     ],
@@ -9707,7 +9725,7 @@
     ]
   },
   {
-    "name": "wwwalk.wwwalk.dto.ResponseDto",
+    "name": "wwwalk.wwwalk.dto.ErrorResponse",
     "allDeclaredFields": true,
     "allDeclaredConstructors": true,
     "methods": [
@@ -9716,7 +9734,63 @@
         "parameterTypes": [ ]
       },
       {
+        "name": "getMessage",
+        "parameterTypes": [ ]
+      },
+      {
         "name": "getStatus",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "setHttpStatus",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "setMessage",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "setStatus",
+        "parameterTypes": [
+          "int"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "wwwalk.wwwalk.dto.ProfileDto",
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true,
+    "fields": [
+      {
+        "name": "photoUrl"
+      },
+      {
+        "name": "sumDistance"
+      },
+      {
+        "name": "walkCount"
+      }
+    ],
+    "methods": [
+      {
+        "name": "getPhotoUrl",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getSumDistance",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getUserName",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getWalkCount",
         "parameterTypes": [ ]
       }
     ]
@@ -9729,6 +9803,43 @@
       {
         "name": "getResult",
         "parameterTypes": [ ]
+      }
+    ]
+  },
+  {
+    "name": "wwwalk.wwwalk.dto.SuccessResponse",
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true,
+    "methods": [
+      {
+        "name": "getHttpStatus",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getMessage",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getStatus",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "setHttpStatus",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "setMessage",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "setStatus",
+        "parameterTypes": [
+          "int"
+        ]
       }
     ]
   },

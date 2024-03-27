@@ -11,6 +11,7 @@ import wwwalk.wwwalk.entity.Pin;
 import wwwalk.wwwalk.entity.Point;
 import wwwalk.wwwalk.entity.Route;
 import wwwalk.wwwalk.entity.State;
+import wwwalk.wwwalk.exception.RouteException;
 import wwwalk.wwwalk.repository.RouteRepository;
 
 import java.time.LocalDateTime;
@@ -28,7 +29,6 @@ public class RouteService {
     @Autowired
     private final SessionManager sessionManager;
 
-
     public String doLike(String uuid, Long routeId) {
         String userId = sessionManager.getId(uuid);
         String result = routeRepository.manageLike(userId, routeId);
@@ -39,7 +39,7 @@ public class RouteService {
             return "0";
         }
         else {
-            throw new IllegalStateException("작업 중 오류가 발생하였습니다.");
+            throw new RouteException("like error");
         }
     }
 
@@ -47,7 +47,7 @@ public class RouteService {
         String userId = sessionManager.getId(form.getUuid());
         Route findRoute = routeRepository.findById(Long.valueOf(form.getRouteId()));
         if(!(findRoute.getUser().getId()).equals(userId)) {
-            throw new IllegalStateException();
+            throw new RouteException("point add error");
         }
         Point point = new Point(form.getLongitude(), form.getLatitude(), LocalDateTime.now(), findRoute);
         routeRepository.createPoint(point);
