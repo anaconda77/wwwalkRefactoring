@@ -20,6 +20,10 @@ spring:
         default-page-size: 10
         max-page-size: 2000
 
+jwt:
+  header: Authorization
+  secret: U3ByaW5nLUJvb3QtQmFja2VuZC1Qcm9qZWN0LVJlZmFjdG9yaW5nLUFuZC1TdHVkeS1Gcm9tLUFuYWNvbmRhCg==
+  token-validity-in-seconds: 86400
 #trace < debug < info < warn < error
 logging.level:
 #  root: info

@@ -1,0 +1,1 @@
+[engine:junit-jupiter]/[class:wwwalk.wwwalk.controller.JwtLoginTest]/[method:getUserInfoTest()]

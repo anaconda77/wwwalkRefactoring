@@ -83,6 +83,21 @@
         "pattern": "\\Qorg\/springframework\/http\/mime.types\\E"
       },
       {
+        "pattern": "\\Qorg\/springframework\/security\\E"
+      },
+      {
+        "pattern": "\\Qorg\/springframework\/security\/core\\E"
+      },
+      {
+        "pattern": "\\Qorg\/springframework\/security\/core\/userdetails\\E"
+      },
+      {
+        "pattern": "\\Qorg\/springframework\/security\/core\/userdetails\/jdbc\\E"
+      },
+      {
+        "pattern": "\\Qorg\/springframework\/security\/core\/userdetails\/jdbc\/users.ddl\\E"
+      },
+      {
         "pattern": "\\Qorg\/springframework\/web\\E"
       },
       {
@@ -111,7 +126,24 @@
       },
       {
         "pattern": "\\Qtemplates\/\\E.*"
+      },
+      {
+        "pattern": "\\Qwwwalk\\E"
+      },
+      {
+        "pattern": "\\Qwwwalk\/wwwalk\\E"
+      },
+      {
+        "pattern": "\\Qwwwalk\/wwwalk\/security\\E"
+      },
+      {
+        "pattern": "\\Qwwwalk\/wwwalk\/security\/SecurityConfig.class\\E"
       }
     ]
-  }
+  },
+  "bundles": [
+    {
+      "name": "org.springframework.security.messages"
+    }
+  ]
 }

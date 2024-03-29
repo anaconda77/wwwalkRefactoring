@@ -32,6 +32,8 @@ public class QRoute extends EntityPathBase<Route> {
 
     public final NumberPath<Integer> length = createNumber("length", Integer.class);
 
+    public final QMember member;
+
     public final StringPath musicUrl = createString("musicUrl");
 
     public final StringPath name = createString("name");
@@ -45,8 +47,6 @@ public class QRoute extends EntityPathBase<Route> {
     public final NumberPath<Double> startPointY = createNumber("startPointY", Double.class);
 
     public final ListPath<String, StringPath> tags = this.<String, StringPath>createList("tags", String.class, StringPath.class, PathInits.DIRECT2);
-
-    public final QUser user;
 
     public QRoute(String variable) {
         this(Route.class, forVariable(variable), INITS);
@@ -66,7 +66,7 @@ public class QRoute extends EntityPathBase<Route> {
 
     public QRoute(Class<? extends Route> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.user = inits.isInitialized("user") ? new QUser(forProperty("user")) : null;
+        this.member = inits.isInitialized("member") ? new QMember(forProperty("member")) : null;
     }
 
 }

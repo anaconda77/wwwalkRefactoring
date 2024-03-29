@@ -81,7 +81,7 @@ public class RouteRepository {
                         route.name
                 )
                 .from(route)
-                .where(route.user.id.eq(userId))
+                .where(route.member.username.eq(userId))
                 .fetch();
 
         List<Pin> allPins = findAllPins();
@@ -108,7 +108,7 @@ public class RouteRepository {
                 )
                 .from(favorite)
                 .join(favorite.route, route)
-                .where(route.user.id.eq(userId))
+                .where(route.member.username.eq(userId))
                 .fetch();
 
         List<Pin> allPins = findAllPins();
@@ -121,7 +121,7 @@ public class RouteRepository {
     }
 
     public String manageLike(String userId, Long routeId) {
-        User user = em.find(User.class, userId);
+        Member member = em.find(Member.class, userId);
         Route route = em.find(Route.class, routeId);
         List<Like> result = em.createQuery("select l from Like l " +
                         "where l.user.id= :userId and l.route.id= :routeId", Like.class)
@@ -129,7 +129,7 @@ public class RouteRepository {
                 .setParameter("routeId", routeId)
                 .getResultList();
         if(result.isEmpty()) {
-            Like like = new Like(user, route);
+            Like like = new Like(member, route);
             em.persist(like);
             return "like";
         }

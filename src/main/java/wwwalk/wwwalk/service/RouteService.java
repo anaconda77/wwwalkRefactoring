@@ -46,7 +46,7 @@ public class RouteService {
     public void addPoint(RoutePointForm form) {
         String userId = sessionManager.getId(form.getUuid());
         Route findRoute = routeRepository.findById(Long.valueOf(form.getRouteId()));
-        if(!(findRoute.getUser().getId()).equals(userId)) {
+        if(!(findRoute.getMember().getUsername()).equals(userId)) {
             throw new RouteException("point add error");
         }
         Point point = new Point(form.getLongitude(), form.getLatitude(), LocalDateTime.now(), findRoute);

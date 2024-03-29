@@ -17,13 +17,13 @@ public class Like {
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private User user;
+    private Member member;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "route_id")
     private Route route;
 
-    public Like(User user, Route route) {
-        this.user = user;
+    public Like(Member member, Route route) {
+        this.member = member;
         this.route = route;
     }
 }

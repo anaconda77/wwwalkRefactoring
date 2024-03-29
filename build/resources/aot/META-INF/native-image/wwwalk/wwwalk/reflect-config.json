@@ -1419,7 +1419,8 @@
   },
   {
     "name": "org.aopalliance.intercept.MethodInterceptor",
-    "queryAllPublicMethods": true
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
   },
   {
     "name": "org.eclipse.core.runtime.FileLocator"
@@ -1448,7 +1449,8 @@
   },
   {
     "name": "org.springframework.aop.Advisor",
-    "queryAllPublicMethods": true
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
   },
   {
     "name": "org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator",
@@ -1537,7 +1539,8 @@
   },
   {
     "name": "org.springframework.beans.factory.config.BeanFactoryPostProcessor",
-    "queryAllPublicMethods": true
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
   },
   {
     "name": "org.springframework.beans.factory.config.BeanPostProcessor",
@@ -1566,6 +1569,11 @@
   {
     "name": "org.springframework.beans.factory.SmartInitializingSingleton",
     "queryAllPublicMethods": true
+  },
+  {
+    "name": "org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
   },
   {
     "name": "org.springframework.boot.ApplicationContextFactory",
@@ -2982,6 +2990,142 @@
   {
     "name": "org.springframework.boot.autoconfigure.r2dbc.NoConnectionFactoryBeanFailureAnalyzer",
     "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.boot.autoconfigure.security.SecurityProperties",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getFilter",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getUser",
+        "parameterTypes": [ ]
+      }
+    ]
+  },
+  {
+    "name": "org.springframework.boot.autoconfigure.security.SecurityProperties$Filter",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getDispatcherTypes",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getOrder",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "setDispatcherTypes",
+        "parameterTypes": [
+          "java.util.Set"
+        ]
+      },
+      {
+        "name": "setOrder",
+        "parameterTypes": [
+          "int"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.springframework.boot.autoconfigure.security.SecurityProperties$User",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getName",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getPassword",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getRoles",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "isPasswordGenerated",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "setName",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "setPassword",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "setRoles",
+        "parameterTypes": [
+          "java.util.List"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "authenticationEventPublisher",
+        "parameterTypes": [
+          "org.springframework.context.ApplicationEventPublisher"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "securityFilterChainRegistration",
+        "parameterTypes": [
+          "org.springframework.boot.autoconfigure.security.SecurityProperties"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.springframework.boot.autoconfigure.security.servlet.SpringBootWebSecurityConfiguration",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [ ]
+      }
+    ]
   },
   {
     "name": "org.springframework.boot.autoconfigure.service.connection.ConnectionDetails",
@@ -7818,6 +7962,23 @@
     "allDeclaredConstructors": true
   },
   {
+    "name": "org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.boot.web.servlet.DispatcherType",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "java.lang.String",
+          "int"
+        ]
+      }
+    ]
+  },
+  {
     "name": "org.springframework.boot.web.servlet.error.DefaultErrorAttributes",
     "queryAllPublicMethods": true,
     "queryAllDeclaredMethods": true
@@ -8212,6 +8373,7 @@
   {
     "name": "org.springframework.data.jpa.domain.support.AuditingEntityListener",
     "allDeclaredConstructors": true,
+    "allPublicMethods": true,
     "allDeclaredMethods": true
   },
   {
@@ -8959,6 +9121,572 @@
     "queryAllPublicMethods": true
   },
   {
+    "name": "org.springframework.security.access.expression.method.MethodSecurityExpressionRoot",
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.springframework.security.access.expression.SecurityExpressionHandler",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.access.expression.SecurityExpressionOperations",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.access.expression.SecurityExpressionRoot",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.authentication.AbstractAuthenticationToken",
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.springframework.security.authentication.AccountExpiredException",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.authentication.AuthenticationEventPublisher",
+    "queryAllPublicMethods": true
+  },
+  {
+    "name": "org.springframework.security.authentication.AuthenticationServiceException",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.authentication.BadCredentialsException",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.authentication.CredentialsExpiredException",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.authentication.DefaultAuthenticationEventPublisher",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.authentication.DisabledException",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.authentication.event.AuthenticationFailureBadCredentialsEvent",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.authentication.event.AuthenticationFailureCredentialsExpiredEvent",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.authentication.event.AuthenticationFailureDisabledEvent",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.authentication.event.AuthenticationFailureExpiredEvent",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.authentication.event.AuthenticationFailureLockedEvent",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.authentication.event.AuthenticationFailureProviderNotFoundEvent",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.authentication.event.AuthenticationFailureProxyUntrustedEvent",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.authentication.event.AuthenticationFailureServiceExceptionEvent",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.authentication.LockedException",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.authentication.ProviderNotFoundException",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "authenticationManagerBuilder",
+        "parameterTypes": [
+          "org.springframework.security.config.annotation.ObjectPostProcessor",
+          "org.springframework.context.ApplicationContext"
+        ]
+      },
+      {
+        "name": "enableGlobalAuthenticationAutowiredConfigurer",
+        "parameterTypes": [
+          "org.springframework.context.ApplicationContext"
+        ]
+      },
+      {
+        "name": "initializeAuthenticationProviderBeanManagerConfigurer",
+        "parameterTypes": [
+          "org.springframework.context.ApplicationContext"
+        ]
+      },
+      {
+        "name": "initializeUserDetailsBeanManagerConfigurer",
+        "parameterTypes": [
+          "org.springframework.context.ApplicationContext"
+        ]
+      },
+      {
+        "name": "setApplicationContext",
+        "parameterTypes": [
+          "org.springframework.context.ApplicationContext"
+        ]
+      },
+      {
+        "name": "setGlobalAuthenticationConfigurers",
+        "parameterTypes": [
+          "java.util.List"
+        ]
+      },
+      {
+        "name": "setObjectPostProcessor",
+        "parameterTypes": [
+          "org.springframework.security.config.annotation.ObjectPostProcessor"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.springframework.security.config.annotation.authentication.configuration.GlobalAuthenticationConfigurerAdapter",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.config.annotation.authentication.configuration.InitializeAuthenticationProviderBeanManagerConfigurer",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.config.annotation.authentication.ProviderManagerBuilder",
+    "queryAllPublicMethods": true
+  },
+  {
+    "name": "org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "objectPostProcessor",
+        "parameterTypes": [
+          "org.springframework.beans.factory.config.AutowireCapableBeanFactory"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.springframework.security.config.annotation.method.configuration.PrePostMethodSecurityConfiguration",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "postAuthorizeAuthorizationMethodInterceptor",
+        "parameterTypes": [
+          "org.springframework.beans.factory.ObjectProvider",
+          "org.springframework.beans.factory.ObjectProvider",
+          "org.springframework.beans.factory.ObjectProvider",
+          "org.springframework.beans.factory.ObjectProvider",
+          "org.springframework.beans.factory.ObjectProvider",
+          "org.springframework.context.ApplicationContext"
+        ]
+      },
+      {
+        "name": "postFilterAuthorizationMethodInterceptor",
+        "parameterTypes": [
+          "org.springframework.beans.factory.ObjectProvider",
+          "org.springframework.beans.factory.ObjectProvider",
+          "org.springframework.beans.factory.ObjectProvider",
+          "org.springframework.context.ApplicationContext"
+        ]
+      },
+      {
+        "name": "preAuthorizeAuthorizationMethodInterceptor",
+        "parameterTypes": [
+          "org.springframework.beans.factory.ObjectProvider",
+          "org.springframework.beans.factory.ObjectProvider",
+          "org.springframework.beans.factory.ObjectProvider",
+          "org.springframework.beans.factory.ObjectProvider",
+          "org.springframework.beans.factory.ObjectProvider",
+          "org.springframework.context.ApplicationContext"
+        ]
+      },
+      {
+        "name": "preFilterAuthorizationMethodInterceptor",
+        "parameterTypes": [
+          "org.springframework.beans.factory.ObjectProvider",
+          "org.springframework.beans.factory.ObjectProvider",
+          "org.springframework.beans.factory.ObjectProvider",
+          "org.springframework.context.ApplicationContext"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.springframework.security.config.annotation.ObjectPostProcessor",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.config.annotation.SecurityBuilder",
+    "queryAllPublicMethods": true
+  },
+  {
+    "name": "org.springframework.security.config.annotation.SecurityConfigurer",
+    "queryAllPublicMethods": true
+  },
+  {
+    "name": "org.springframework.security.config.annotation.web.builders.HttpSecurity",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "httpSecurity",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "setApplicationContext",
+        "parameterTypes": [
+          "org.springframework.context.ApplicationContext"
+        ]
+      },
+      {
+        "name": "setAuthenticationConfiguration",
+        "parameterTypes": [
+          "org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration"
+        ]
+      },
+      {
+        "name": "setContentNegotiationStrategy",
+        "parameterTypes": [
+          "org.springframework.web.accept.ContentNegotiationStrategy"
+        ]
+      },
+      {
+        "name": "setObjectPostProcessor",
+        "parameterTypes": [
+          "org.springframework.security.config.annotation.ObjectPostProcessor"
+        ]
+      },
+      {
+        "name": "setSecurityContextHolderStrategy",
+        "parameterTypes": [
+          "org.springframework.security.core.context.SecurityContextHolderStrategy"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "requestDataValueProcessor",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "springSecurityHandlerMappingIntrospectorBeanDefinitionRegistryPostProcessor",
+        "parameterTypes": [ ]
+      }
+    ]
+  },
+  {
+    "name": "org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy",
+    "allDeclaredConstructors": true,
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "allDeclaredMethods": true,
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "java.util.List"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$HandlerMappingIntrospectorCacheFilterFactoryBean",
+    "allDeclaredConstructors": true,
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [ ]
+      }
+    ]
+  },
+  {
+    "name": "org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "fields": [
+      {
+        "name": "httpSecurity"
+      },
+      {
+        "name": "objectObjectPostProcessor"
+      }
+    ],
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "conversionServicePostProcessor",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "delegatingApplicationListener",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "privilegeEvaluator",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "setFilterChainProxySecurityConfigurer",
+        "parameterTypes": [
+          "org.springframework.security.config.annotation.ObjectPostProcessor",
+          "org.springframework.beans.factory.config.ConfigurableListableBeanFactory"
+        ]
+      },
+      {
+        "name": "setFilterChains",
+        "parameterTypes": [
+          "java.util.List"
+        ]
+      },
+      {
+        "name": "setWebSecurityCustomizers",
+        "parameterTypes": [
+          "java.util.List"
+        ]
+      },
+      {
+        "name": "springSecurityFilterChain",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "webSecurityExpressionHandler",
+        "parameterTypes": [ ]
+      }
+    ]
+  },
+  {
+    "name": "org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.config.annotation.web.HttpSecurityBuilder",
+    "queryAllPublicMethods": true
+  },
+  {
+    "name": "org.springframework.security.context.DelegatingApplicationListener",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.core.context.SecurityContextImpl",
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.springframework.security.core.userdetails.UserDetailsService",
+    "queryAllPublicMethods": true
+  },
+  {
+    "name": "org.springframework.security.core.userdetails.UsernameNotFoundException",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.crypto.password.PasswordEncoder",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.test.context.support.ReactorContextTestExecutionListener",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.security.web.access.AccessDeniedHandler",
+    "queryAllPublicMethods": true
+  },
+  {
+    "name": "org.springframework.security.web.access.AuthorizationManagerWebInvocationPrivilegeEvaluator$HttpServletRequestTransformer",
+    "queryAllPublicMethods": true
+  },
+  {
+    "name": "org.springframework.security.web.access.expression.WebSecurityExpressionRoot",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.web.access.HandlerMappingIntrospectorRequestTransformer",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "org.springframework.web.servlet.handler.HandlerMappingIntrospector"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.springframework.security.web.access.WebInvocationPrivilegeEvaluator",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.web.AuthenticationEntryPoint",
+    "queryAllPublicMethods": true
+  },
+  {
+    "name": "org.springframework.security.web.context.SecurityContextHolderFilter",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "org.springframework.security.web.context.SecurityContextPersistenceFilter",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "org.springframework.security.web.csrf.CsrfFilter",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler$SupplierCsrfToken",
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.web.FilterChainProxy",
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.security.web.SecurityFilterChain",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate",
+    "allPublicConstructors": true
+  },
+  {
+    "name": "org.springframework.test.context.ContextCustomizerFactory",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.test.context.event.ApplicationEventsTestExecutionListener",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.test.context.event.EventPublishingTestExecutionListener",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.test.context.observation.MicrometerObservationRegistryTestExecutionListener",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.test.context.support.DefaultBootstrapContext",
+    "allPublicConstructors": true
+  },
+  {
+    "name": "org.springframework.test.context.support.DependencyInjectionTestExecutionListener",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.test.context.support.DirtiesContextTestExecutionListener",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.test.context.support.DynamicPropertiesContextCustomizerFactory",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.test.context.TestExecutionListener",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.test.context.transaction.TransactionalTestExecutionListener",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.test.context.web.ServletTestExecutionListener",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.test.context.web.socket.MockServerContainerContextCustomizerFactory",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.test.context.web.WebAppConfiguration",
+    "allDeclaredMethods": true
+  },
+  {
     "name": "org.springframework.transaction.annotation.AbstractTransactionManagementConfiguration",
     "queriedMethods": [
       {
@@ -9376,6 +10104,11 @@
     "queryAllDeclaredMethods": true
   },
   {
+    "name": "org.springframework.web.servlet.support.RequestDataValueProcessor",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
     "name": "org.springframework.web.servlet.ThemeResolver",
     "queryAllPublicMethods": true,
     "queryAllDeclaredMethods": true
@@ -9420,6 +10153,94 @@
     "condition": {
       "typeReachable": "org.springframework.boot.env.YamlPropertySourceLoader"
     }
+  },
+  {
+    "name": "wwwalk.wwwalk.controller.MemberController",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "fields": [
+      {
+        "name": "authenticationManagerBuilder"
+      },
+      {
+        "name": "memberRepository"
+      },
+      {
+        "name": "memberService"
+      },
+      {
+        "name": "tokenProvider"
+      }
+    ],
+    "methods": [
+      {
+        "name": "create",
+        "parameterTypes": [
+          "wwwalk.wwwalk.controller.MemberJoinForm"
+        ]
+      },
+      {
+        "name": "login",
+        "parameterTypes": [
+          "wwwalk.wwwalk.controller.MemberJoinForm"
+        ]
+      },
+      {
+        "name": "loginExHandle",
+        "parameterTypes": [
+          "wwwalk.wwwalk.exception.LoginException"
+        ]
+      },
+      {
+        "name": "showProfile",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "userExHandle",
+        "parameterTypes": [
+          "wwwalk.wwwalk.exception.UserException"
+        ]
+      }
+    ],
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "wwwalk.wwwalk.service.MemberService",
+          "wwwalk.wwwalk.repository.MemberRepository",
+          "wwwalk.wwwalk.security.TokenProvider",
+          "org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "wwwalk.wwwalk.controller.MemberJoinForm",
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true,
+    "fields": [
+      {
+        "name": "imageUrl"
+      }
+    ],
+    "methods": [
+      {
+        "name": "getImageUrl",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getName",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getPassword",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getUsername",
+        "parameterTypes": [ ]
+      }
+    ]
   },
   {
     "name": "wwwalk.wwwalk.controller.RouteController",
@@ -9643,88 +10464,6 @@
     ]
   },
   {
-    "name": "wwwalk.wwwalk.controller.UserController",
-    "queryAllPublicMethods": true,
-    "queryAllDeclaredMethods": true,
-    "fields": [
-      {
-        "name": "userRepository"
-      },
-      {
-        "name": "userService"
-      }
-    ],
-    "methods": [
-      {
-        "name": "create",
-        "parameterTypes": [
-          "wwwalk.wwwalk.controller.UserJoinForm"
-        ]
-      },
-      {
-        "name": "login",
-        "parameterTypes": [
-          "wwwalk.wwwalk.controller.UserJoinForm"
-        ]
-      },
-      {
-        "name": "loginExHandle",
-        "parameterTypes": [
-          "wwwalk.wwwalk.exception.LoginException"
-        ]
-      },
-      {
-        "name": "showProfile",
-        "parameterTypes": [
-          "java.lang.String"
-        ]
-      },
-      {
-        "name": "userExHandle",
-        "parameterTypes": [
-          "wwwalk.wwwalk.exception.UserException"
-        ]
-      }
-    ],
-    "queriedMethods": [
-      {
-        "name": "<init>",
-        "parameterTypes": [
-          "wwwalk.wwwalk.service.UserService",
-          "wwwalk.wwwalk.repository.UserRepository"
-        ]
-      }
-    ]
-  },
-  {
-    "name": "wwwalk.wwwalk.controller.UserJoinForm",
-    "allDeclaredFields": true,
-    "allDeclaredConstructors": true,
-    "fields": [
-      {
-        "name": "imageUrl"
-      }
-    ],
-    "methods": [
-      {
-        "name": "getId",
-        "parameterTypes": [ ]
-      },
-      {
-        "name": "getImageUrl",
-        "parameterTypes": [ ]
-      },
-      {
-        "name": "getName",
-        "parameterTypes": [ ]
-      },
-      {
-        "name": "getPassword",
-        "parameterTypes": [ ]
-      }
-    ]
-  },
-  {
     "name": "wwwalk.wwwalk.dto.ErrorResponse",
     "allDeclaredFields": true,
     "allDeclaredConstructors": true,
@@ -9844,6 +10583,11 @@
     ]
   },
   {
+    "name": "wwwalk.wwwalk.entity.BaseEntity",
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true
+  },
+  {
     "name": "wwwalk.wwwalk.entity.Comment",
     "allDeclaredFields": true,
     "allDeclaredConstructors": true,
@@ -9861,11 +10605,11 @@
         "parameterTypes": [ ]
       },
       {
-        "name": "getRoute",
+        "name": "getMember",
         "parameterTypes": [ ]
       },
       {
-        "name": "getUser",
+        "name": "getRoute",
         "parameterTypes": [ ]
       }
     ]
@@ -9880,11 +10624,11 @@
         "parameterTypes": [ ]
       },
       {
-        "name": "getRoute",
+        "name": "getMember",
         "parameterTypes": [ ]
       },
       {
-        "name": "getUser",
+        "name": "getRoute",
         "parameterTypes": [ ]
       }
     ]
@@ -9899,12 +10643,61 @@
         "parameterTypes": [ ]
       },
       {
-        "name": "getRoute",
+        "name": "getMember",
         "parameterTypes": [ ]
       },
       {
-        "name": "getUser",
+        "name": "getRoute",
         "parameterTypes": [ ]
+      }
+    ]
+  },
+  {
+    "name": "wwwalk.wwwalk.entity.Member",
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true,
+    "methods": [
+      {
+        "name": "getCreatedDate",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getDistance",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getId",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getImageUrl",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getPassword",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getRole",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getState",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getUpdatedDate",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getUsername",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "setPassword",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
       }
     ]
   },
@@ -9977,6 +10770,13 @@
     "allPublicMethods": true
   },
   {
+    "name": "wwwalk.wwwalk.entity.QMember",
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true
+  },
+  {
     "name": "wwwalk.wwwalk.entity.QPin",
     "allDeclaredFields": true,
     "allDeclaredConstructors": true,
@@ -9991,11 +10791,17 @@
     "allPublicMethods": true
   },
   {
-    "name": "wwwalk.wwwalk.entity.QUser",
+    "name": "wwwalk.wwwalk.entity.Role",
     "allDeclaredFields": true,
+    "allPublicConstructors": true,
     "allDeclaredConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true
+    "allPublicMethods": true,
+    "methods": [
+      {
+        "name": "getDescription",
+        "parameterTypes": [ ]
+      }
+    ]
   },
   {
     "name": "wwwalk.wwwalk.entity.Route",
@@ -10020,6 +10826,10 @@
       },
       {
         "name": "getLength",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "getMember",
         "parameterTypes": [ ]
       },
       {
@@ -10051,10 +10861,6 @@
         "parameterTypes": [ ]
       },
       {
-        "name": "getUser",
-        "parameterTypes": [ ]
-      },
-      {
         "name": "setDuration",
         "parameterTypes": [
           "java.time.LocalDateTime"
@@ -10082,6 +10888,12 @@
         "name": "setLength",
         "parameterTypes": [
           "int"
+        ]
+      },
+      {
+        "name": "setMember",
+        "parameterTypes": [
+          "wwwalk.wwwalk.entity.Member"
         ]
       },
       {
@@ -10125,12 +10937,6 @@
         "parameterTypes": [
           "java.util.List"
         ]
-      },
-      {
-        "name": "setUser",
-        "parameterTypes": [
-          "wwwalk.wwwalk.entity.User"
-        ]
       }
     ]
   },
@@ -10142,39 +10948,24 @@
     "allPublicMethods": true
   },
   {
-    "name": "wwwalk.wwwalk.entity.User",
-    "allDeclaredFields": true,
-    "allDeclaredConstructors": true,
-    "methods": [
+    "name": "wwwalk.wwwalk.exception.JwtAccessDeniedHandler",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "queriedMethods": [
       {
-        "name": "getDistance",
+        "name": "<init>",
         "parameterTypes": [ ]
-      },
+      }
+    ]
+  },
+  {
+    "name": "wwwalk.wwwalk.exception.JwtAuthentiactionEntryPoint",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "queriedMethods": [
       {
-        "name": "getId",
+        "name": "<init>",
         "parameterTypes": [ ]
-      },
-      {
-        "name": "getImageUrl",
-        "parameterTypes": [ ]
-      },
-      {
-        "name": "getName",
-        "parameterTypes": [ ]
-      },
-      {
-        "name": "getPassword",
-        "parameterTypes": [ ]
-      },
-      {
-        "name": "getState",
-        "parameterTypes": [ ]
-      },
-      {
-        "name": "setPassword",
-        "parameterTypes": [
-          "java.lang.String"
-        ]
       }
     ]
   },
@@ -10183,7 +10974,7 @@
     "allPublicMethods": true
   },
   {
-    "name": "wwwalk.wwwalk.repository.InitData",
+    "name": "wwwalk.wwwalk.repository.InitDB",
     "queryAllPublicMethods": true,
     "queryAllDeclaredMethods": true,
     "methods": [
@@ -10196,19 +10987,19 @@
       {
         "name": "<init>",
         "parameterTypes": [
-          "wwwalk.wwwalk.repository.InitData$InitService"
+          "wwwalk.wwwalk.repository.InitDB$InitService"
         ]
       }
     ]
   },
   {
-    "name": "wwwalk.wwwalk.repository.InitData$InitService$$SpringCGLIB$$0",
+    "name": "wwwalk.wwwalk.repository.InitDB$InitService$$SpringCGLIB$$0",
     "allDeclaredFields": true,
     "allDeclaredConstructors": true,
     "allDeclaredMethods": true
   },
   {
-    "name": "wwwalk.wwwalk.repository.InitData$InitService",
+    "name": "wwwalk.wwwalk.repository.InitDB$InitService",
     "queryAllPublicMethods": true,
     "queryAllDeclaredMethods": true,
     "allPublicMethods": true,
@@ -10232,11 +11023,15 @@
     ]
   },
   {
-    "name": "wwwalk.wwwalk.repository.InitData$InitService$$SpringCGLIB$$0",
+    "name": "wwwalk.wwwalk.repository.InitDB$InitService$$SpringCGLIB$$0",
     "allDeclaredConstructors": true
   },
   {
     "name": "wwwalk.wwwalk.repository.LikeRepository",
+    "allPublicMethods": true
+  },
+  {
+    "name": "wwwalk.wwwalk.repository.MemberRepository",
     "allPublicMethods": true
   },
   {
@@ -10288,8 +11083,125 @@
     "allDeclaredMethods": true
   },
   {
-    "name": "wwwalk.wwwalk.repository.UserRepository",
-    "allPublicMethods": true
+    "name": "wwwalk.wwwalk.security.MyUserDetailService",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "fields": [
+      {
+        "name": "memberRepository"
+      }
+    ],
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "wwwalk.wwwalk.repository.MemberRepository"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "wwwalk.wwwalk.security.SecurityConfig",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredMethods": true,
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "wwwalk.wwwalk.security.TokenProvider",
+          "wwwalk.wwwalk.exception.JwtAuthentiactionEntryPoint",
+          "wwwalk.wwwalk.exception.JwtAccessDeniedHandler"
+        ]
+      },
+      {
+        "name": "passwordEncoder",
+        "parameterTypes": [ ]
+      },
+      {
+        "name": "securityFilterChain",
+        "parameterTypes": [
+          "org.springframework.security.config.annotation.web.builders.HttpSecurity"
+        ]
+      },
+      {
+        "name": "webSecurityCustomizer",
+        "parameterTypes": [ ]
+      }
+    ]
+  },
+  {
+    "name": "wwwalk.wwwalk.security.SecurityConfig$$SpringCGLIB$$0",
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true,
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "wwwalk.wwwalk.security.TokenProvider",
+          "wwwalk.wwwalk.exception.JwtAuthentiactionEntryPoint",
+          "wwwalk.wwwalk.exception.JwtAccessDeniedHandler"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "wwwalk.wwwalk.security.SecurityConfig$$SpringCGLIB$$FastClass$$0",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "wwwalk.wwwalk.security.SecurityConfig$$SpringCGLIB$$FastClass$$1",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "wwwalk.wwwalk.security.TokenProvider",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "java.lang.String",
+          "java.lang.Long"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "wwwalk.wwwalk.service.MemberService",
+    "queryAllPublicMethods": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredMethods": true,
+    "fields": [
+      {
+        "name": "memberRepository"
+      },
+      {
+        "name": "passwordEncoder"
+      },
+      {
+        "name": "sessionManager"
+      }
+    ],
+    "queriedMethods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "wwwalk.wwwalk.repository.MemberRepository",
+          "wwwalk.wwwalk.service.SessionManager",
+          "org.springframework.security.crypto.password.PasswordEncoder"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "wwwalk.wwwalk.service.MemberService$$SpringCGLIB$$0",
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
   },
   {
     "name": "wwwalk.wwwalk.service.RouteService",
@@ -10331,36 +11243,6 @@
         "parameterTypes": [ ]
       }
     ]
-  },
-  {
-    "name": "wwwalk.wwwalk.service.UserService",
-    "queryAllPublicMethods": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredMethods": true,
-    "fields": [
-      {
-        "name": "sessionManager"
-      },
-      {
-        "name": "userRepository"
-      }
-    ],
-    "queriedMethods": [
-      {
-        "name": "<init>",
-        "parameterTypes": [
-          "wwwalk.wwwalk.repository.UserRepository",
-          "wwwalk.wwwalk.service.SessionManager"
-        ]
-      }
-    ]
-  },
-  {
-    "name": "wwwalk.wwwalk.service.UserService$$SpringCGLIB$$0",
-    "allDeclaredFields": true,
-    "allDeclaredConstructors": true,
-    "allDeclaredMethods": true
   },
   {
     "name": "wwwalk.wwwalk.WwwalkApplication",

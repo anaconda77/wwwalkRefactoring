@@ -35,10 +35,10 @@ public class Route {
     private List<String> tags;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private User user;
+    private Member member;
 
     public Route(String name, double startPointX, double startPointY, double endPointX, double endPointY
-            , LocalDateTime duration, int length, String musicUrl, LocalDateTime rDate, State security, User user) {
+            , LocalDateTime duration, int length, String musicUrl, LocalDateTime rDate, State security, Member member) {
         this.name = name;
         this.startPointX = startPointX;
         this.startPointY = startPointY;
@@ -49,7 +49,7 @@ public class Route {
         this.musicUrl = musicUrl;
         this.rDate = rDate;
         this.security = security;
-        this.user = user;
+        this.member = member;
     }
 
     public Route(Long id, String name, State security) {

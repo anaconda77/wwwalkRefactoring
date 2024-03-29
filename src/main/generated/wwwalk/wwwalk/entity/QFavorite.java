@@ -24,9 +24,9 @@ public class QFavorite extends EntityPathBase<Favorite> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final QRoute route;
+    public final QMember member;
 
-    public final QUser user;
+    public final QRoute route;
 
     public QFavorite(String variable) {
         this(Favorite.class, forVariable(variable), INITS);
@@ -46,8 +46,8 @@ public class QFavorite extends EntityPathBase<Favorite> {
 
     public QFavorite(Class<? extends Favorite> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
+        this.member = inits.isInitialized("member") ? new QMember(forProperty("member")) : null;
         this.route = inits.isInitialized("route") ? new QRoute(forProperty("route"), inits.get("route")) : null;
-        this.user = inits.isInitialized("user") ? new QUser(forProperty("user")) : null;
     }
 
 }

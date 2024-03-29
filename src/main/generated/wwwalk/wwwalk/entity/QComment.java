@@ -28,9 +28,9 @@ public class QComment extends EntityPathBase<Comment> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final QRoute route;
+    public final QMember member;
 
-    public final QUser user;
+    public final QRoute route;
 
     public QComment(String variable) {
         this(Comment.class, forVariable(variable), INITS);
@@ -50,8 +50,8 @@ public class QComment extends EntityPathBase<Comment> {
 
     public QComment(Class<? extends Comment> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
+        this.member = inits.isInitialized("member") ? new QMember(forProperty("member")) : null;
         this.route = inits.isInitialized("route") ? new QRoute(forProperty("route"), inits.get("route")) : null;
-        this.user = inits.isInitialized("user") ? new QUser(forProperty("user")) : null;
     }
 
 }
