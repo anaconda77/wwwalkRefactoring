@@ -39,8 +39,9 @@ public class Member {
         this.username = memberJoinForm.getUsername();
         this.password = memberJoinForm.getPassword();
         this.imageUrl = memberJoinForm.getImageUrl();
-        this.role = Role.USER;
         this.state = State.PUBLIC;
+        this.createdDate = LocalDateTime.now();
+        this.updatedDate = LocalDateTime.now();
     }
 
     public Member(String username, String password, String name, String imageUrl, Integer distance, State state, LocalDateTime createdDate, LocalDateTime updatedDate) {
@@ -49,9 +50,13 @@ public class Member {
         this.imageUrl = imageUrl;
         this.distance = distance;
         this.state = state;
-        this.role = Role.USER;
+        this.role = Role.NOT_PERMITTED;
         this.createdDate = createdDate;
         this.updatedDate = updatedDate;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public void setPassword(String hashedPw) {

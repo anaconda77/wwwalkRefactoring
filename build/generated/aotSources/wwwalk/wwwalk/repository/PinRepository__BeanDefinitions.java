@@ -10,7 +10,7 @@ import org.springframework.beans.factory.support.InstanceSupplier;
 import org.springframework.beans.factory.support.RootBeanDefinition;
 import org.springframework.core.ResolvableType;
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean;
-import org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean__Autowiring3;
+import org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean__Autowiring;
 import org.springframework.data.repository.query.QueryLookupStrategy;
 
 /**
@@ -36,7 +36,7 @@ public class PinRepository__BeanDefinitions {
     beanDefinition.getConstructorArgumentValues().addIndexedArgumentValue(0, "wwwalk.wwwalk.repository.PinRepository");
     beanDefinition.getPropertyValues().addPropertyValue("queryLookupStrategyKey", QueryLookupStrategy.Key.CREATE_IF_NOT_FOUND);
     beanDefinition.getPropertyValues().addPropertyValue("lazyInit", false);
-    beanDefinition.getPropertyValues().addPropertyValue("namedQueries", new RuntimeBeanReference("jpa.named-queries#3"));
+    beanDefinition.getPropertyValues().addPropertyValue("namedQueries", new RuntimeBeanReference("jpa.named-queries#0"));
     beanDefinition.getPropertyValues().addPropertyValue("repositoryFragments", new RuntimeBeanReference("jpa.PinRepository.fragments#0"));
     beanDefinition.getPropertyValues().addPropertyValue("transactionManager", "transactionManager");
     beanDefinition.getPropertyValues().addPropertyValue("entityManager", new RuntimeBeanReference("jpaSharedEM_entityManagerFactory"));
@@ -44,7 +44,7 @@ public class PinRepository__BeanDefinitions {
     beanDefinition.getPropertyValues().addPropertyValue("mappingContext", new RuntimeBeanReference("jpaMappingContext"));
     beanDefinition.getPropertyValues().addPropertyValue("enableDefaultTransactions", true);
     InstanceSupplier<JpaRepositoryFactoryBean> instanceSupplier = getPinRepositoryInstanceSupplier();
-    instanceSupplier = instanceSupplier.andThen(JpaRepositoryFactoryBean__Autowiring3::apply);
+    instanceSupplier = instanceSupplier.andThen(JpaRepositoryFactoryBean__Autowiring::apply);
     beanDefinition.setInstanceSupplier(instanceSupplier);
     return beanDefinition;
   }

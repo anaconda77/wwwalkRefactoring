@@ -83,6 +83,15 @@
         "pattern": "\\Qorg\/springframework\/http\/mime.types\\E"
       },
       {
+        "pattern": "\\Qorg\/springframework\/mail\\E"
+      },
+      {
+        "pattern": "\\Qorg\/springframework\/mail\/javamail\\E"
+      },
+      {
+        "pattern": "\\Qorg\/springframework\/mail\/javamail\/mime.types\\E"
+      },
+      {
         "pattern": "\\Qorg\/springframework\/security\\E"
       },
       {
@@ -134,10 +143,10 @@
         "pattern": "\\Qwwwalk\/wwwalk\\E"
       },
       {
-        "pattern": "\\Qwwwalk\/wwwalk\/security\\E"
+        "pattern": "\\Qwwwalk\/wwwalk\/auth\\E"
       },
       {
-        "pattern": "\\Qwwwalk\/wwwalk\/security\/SecurityConfig.class\\E"
+        "pattern": "\\Qwwwalk\/wwwalk\/auth\/SecurityConfig.class\\E"
       }
     ]
   },

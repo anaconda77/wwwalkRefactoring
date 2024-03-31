@@ -19,7 +19,7 @@ public class RepositoryComposition__BeanDefinitions {
   @Generated
   public static class RepositoryFragments {
     /**
-     * Get the bean instance supplier for 'jpa.PointRepository.fragments#0'.
+     * Get the bean instance supplier for 'jpa.PinRepository.fragments#0'.
      */
     private static BeanInstanceSupplier<RepositoryFragmentsFactoryBean> getFragmentsInstanceSupplier(
         ) {
@@ -40,7 +40,7 @@ public class RepositoryComposition__BeanDefinitions {
     }
 
     /**
-     * Get the bean instance supplier for 'jpa.MemberRepository.fragments#0'.
+     * Get the bean instance supplier for 'jpa.PointRepository.fragments#0'.
      */
     private static BeanInstanceSupplier<RepositoryFragmentsFactoryBean> getFragmentsInstanceSupplier1(
         ) {
@@ -61,7 +61,7 @@ public class RepositoryComposition__BeanDefinitions {
     }
 
     /**
-     * Get the bean instance supplier for 'jpa.CommentRepository.fragments#0'.
+     * Get the bean instance supplier for 'jpa.LikeRepository.fragments#0'.
      */
     private static BeanInstanceSupplier<RepositoryFragmentsFactoryBean> getFragmentsInstanceSupplier2(
         ) {
@@ -82,7 +82,7 @@ public class RepositoryComposition__BeanDefinitions {
     }
 
     /**
-     * Get the bean instance supplier for 'jpa.PinRepository.fragments#0'.
+     * Get the bean instance supplier for 'jpa.CommentRepository.fragments#0'.
      */
     private static BeanInstanceSupplier<RepositoryFragmentsFactoryBean> getFragmentsInstanceSupplier3(
         ) {
@@ -103,7 +103,7 @@ public class RepositoryComposition__BeanDefinitions {
     }
 
     /**
-     * Get the bean instance supplier for 'jpa.LikeRepository.fragments#0'.
+     * Get the bean instance supplier for 'jpa.MemberRepository.fragments#0'.
      */
     private static BeanInstanceSupplier<RepositoryFragmentsFactoryBean> getFragmentsInstanceSupplier4(
         ) {

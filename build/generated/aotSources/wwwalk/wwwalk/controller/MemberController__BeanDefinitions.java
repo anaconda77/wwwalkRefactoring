@@ -6,8 +6,8 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.InstanceSupplier;
 import org.springframework.beans.factory.support.RootBeanDefinition;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import wwwalk.wwwalk.auth.TokenProvider;
 import wwwalk.wwwalk.repository.MemberRepository;
-import wwwalk.wwwalk.security.TokenProvider;
 import wwwalk.wwwalk.service.MemberService;
 
 /**

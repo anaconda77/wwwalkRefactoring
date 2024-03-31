@@ -4,7 +4,7 @@ import lombok.Getter;
 
 @Getter
 public enum Role {
-    ADMIN("관리자"), USER("일반사용자");
+    ADMIN("관리자"), USER("일반 사용자"), NOT_PERMITTED("인증 대기 사용자");
 
     private String description;
 

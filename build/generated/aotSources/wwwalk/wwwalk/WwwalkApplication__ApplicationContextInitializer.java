@@ -35,7 +35,7 @@ public class WwwalkApplication__ApplicationContextInitializer implements Applica
    */
   private void addImportAwareBeanPostProcessors(DefaultListableBeanFactory beanFactory) {
     Map<String, String> mappings = new HashMap<>();
-    mappings.put("org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration", "wwwalk.wwwalk.security.SecurityConfig");
+    mappings.put("org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration", "wwwalk.wwwalk.auth.SecurityConfig");
     mappings.put("org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration", "org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration$CglibAutoProxyConfiguration");
     RootBeanDefinition beanDefinition = new RootBeanDefinition(ImportAwareAotBeanPostProcessor.class);
     beanDefinition.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);

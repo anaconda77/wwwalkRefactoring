@@ -19,6 +19,22 @@ spring:
       pageable:
         default-page-size: 10
         max-page-size: 2000
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sm1108shin@knu.ac.kr
+    password: bsjpedsgnxjtybpg
+    properties:
+      mail:
+        smtp:
+          auth: true
+          timeout: 5000
+          starttls:
+            enable: true
+    auth-code-expiration-millis: 1800000 //30분
+  redis:
+    host: localhost
+    port: 6379
 
 jwt:
   header: Authorization

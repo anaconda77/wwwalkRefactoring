@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
@@ -14,12 +13,13 @@ import org.springframework.web.bind.annotation.*;
 import wwwalk.wwwalk.dto.ErrorResponse;
 import wwwalk.wwwalk.dto.ProfileDto;
 import wwwalk.wwwalk.dto.SuccessResponse;
+import wwwalk.wwwalk.email.EmailContentBuilder;
 import wwwalk.wwwalk.entity.Member;
 import wwwalk.wwwalk.exception.LoginException;
 import wwwalk.wwwalk.exception.UserException;
 import wwwalk.wwwalk.repository.MemberRepository;
-import wwwalk.wwwalk.security.JwtFilter;
-import wwwalk.wwwalk.security.TokenProvider;
+import wwwalk.wwwalk.auth.JwtFilter;
+import wwwalk.wwwalk.auth.TokenProvider;
 import wwwalk.wwwalk.service.MemberService;
 
 import java.util.Optional;
@@ -54,10 +54,25 @@ public class MemberController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/signup")
     public SuccessResponse create(@RequestBody MemberJoinForm memberJoinForm) {
-        Member member = new Member(memberJoinForm);
-        memberService.join(member);
+        memberService.join(memberJoinForm);
         return new SuccessResponse(HttpStatus.CREATED.value(), "CREATED", "Id Saved");
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping("/verify")
+    public SuccessResponse sendVerifyMail(@RequestParam String username) {
+        Member findMember = memberService.getMemberByUsername(username);
+        memberService.sendVerificationEmail(findMember);
+        return new SuccessResponse(HttpStatus.CREATED.value(), "CREATED", "인증 메일을 전송하였습니다.");
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/verify/{key}")
+    public SuccessResponse getVerify(@PathVariable String key) {
+        memberService.verifyEmail(key);
+        return new SuccessResponse(HttpStatus.OK.value(), "OK", "유저 인증이 완료되었습니다.");
+    }
+
 
     @ResponseStatus(HttpStatus.OK)
     @PostMapping("/login")
@@ -81,6 +96,5 @@ public class MemberController {
         String username = memberService.getUsernameFromAuthentication();
         return memberService.getUserProfile(username);
     }
-
 
 }

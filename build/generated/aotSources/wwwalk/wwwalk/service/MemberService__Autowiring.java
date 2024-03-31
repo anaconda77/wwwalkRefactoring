@@ -14,8 +14,10 @@ public class MemberService__Autowiring {
    */
   public static MemberService apply(RegisteredBean registeredBean, MemberService instance) {
     AutowiredFieldValueResolver.forRequiredField("memberRepository").resolveAndSet(registeredBean, instance);
-    AutowiredFieldValueResolver.forRequiredField("sessionManager").resolveAndSet(registeredBean, instance);
+    AutowiredFieldValueResolver.forRequiredField("redisUtil").resolveAndSet(registeredBean, instance);
     AutowiredFieldValueResolver.forRequiredField("passwordEncoder").resolveAndSet(registeredBean, instance);
+    AutowiredFieldValueResolver.forRequiredField("emailService").resolveAndSet(registeredBean, instance);
+    AutowiredFieldValueResolver.forRequiredField("emailContentBuilder").resolveAndSet(registeredBean, instance);
     return instance;
   }
 }
